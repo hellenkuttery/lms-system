@@ -1,9 +1,19 @@
-import React from 'react'
+import { useEffect, useState } from 'react';
+import { getExampleData } from '../services/api';
 
 const Example = () => {
-  return (
-    <div>Example</div>
-  )
-}
+    const [data, setData] = useState(null);
 
-export default Example
+    useEffect(() => {
+        getExampleData().then(setData);
+    }, []);
+
+    return (
+        <div>
+            <h1>Example Component</h1>
+            {data ? <p>{data.message}</p> : <p>Loading...</p>}
+        </div>
+    );
+};
+
+export default Example;
