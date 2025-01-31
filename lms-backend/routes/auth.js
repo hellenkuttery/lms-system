@@ -58,4 +58,15 @@ router.post('/login', async (req, res) => {
     }
 });
 
+
+router.get('/users', async (req, res) => {
+    try {
+        const users = await User.find({}, 'username email role'); // Şifreyi döndürmemek için sadece belirli alanları seçiyoruz.
+        res.json(users);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ message: 'Server error' });
+    }
+});
+
 module.exports = router;

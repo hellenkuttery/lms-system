@@ -1,7 +1,15 @@
 import React from 'react'
 import Navbar from './../components/Navbar';
+import useAuthCall from '../hooks/useAuthCall';
+import { useEffect } from 'react';
 
 const Dashboard = () => {
+
+  const {register}=useAuthCall()
+  useEffect(()=>{
+    register()
+  },[])
+
   return (
     <div className='bg-[#b29f91]'>
         <Navbar/>
