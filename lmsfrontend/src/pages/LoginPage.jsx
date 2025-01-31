@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-const Register = () => {
+const LoginPage = () => {
   const [darkMode, setDarkMode] = useState(false);
   return (
     <div className="flex flex-col justify-center items-center w-full h-[100vh] bg-[#282D2D] px-5">
@@ -33,30 +33,10 @@ const Register = () => {
             darkMode ? "text-white" : "text-black"
           }`}
         >
-          Register for a free account
+          Login
         </h1>
         <div className="w-full mt-8">
           <div className="mx-auto max-w-xs sm:max-w-md md:max-w-lg flex flex-col gap-4">
-            <div className="flex flex-col sm:flex-row gap-3">
-              <input
-                className={`w-full px-5 py-3 rounded-lg font-medium border-2 border-transparent placeholder-gray-500 text-sm focus:outline-none  focus:border-2  focus:outline ${
-                  darkMode
-                    ? "bg-[#302E30] text-white focus:border-white"
-                    : "bg-gray-100 text-black focus:border-black"
-                }`}
-                type="text"
-                placeholder="Your first name"
-              />
-              <input
-                className={`w-full px-5 py-3 rounded-lg  font-medium border-2 border-transparent placeholder-gray-500 text-sm focus:outline-none focus:border-2  focus:outline ${
-                  darkMode
-                    ? "bg-[#302E30] text-white focus:border-white"
-                    : "bg-gray-100 text-black focus:border-black"
-                }`}
-                type="text"
-                placeholder="Your last name"
-              />
-            </div>
             <input
               className={`w-full px-5 py-3 rounded-lg  font-medium border-2 border-transparent placeholder-gray-500 text-sm focus:outline-none focus:border-2  focus:outline ${
                 darkMode
@@ -66,15 +46,7 @@ const Register = () => {
               type="email"
               placeholder="Enter your email"
             />
-            <input
-              className={`w-full px-5 py-3 rounded-lg  font-medium border-2 border-transparent placeholder-gray-500 text-sm focus:outline-none focus:border-2  focus:outline ${
-                darkMode
-                  ? "bg-[#302E30] text-white focus:border-white"
-                  : "bg-gray-100 text-black focus:border-black"
-              }`}
-              type="tel"
-              placeholder="Enter your phone"
-            />
+
             <input
               className={`w-full px-5 py-3 rounded-lg  font-medium border-2 border-transparent placeholder-gray-500 text-sm focus:outline-none focus:border-2  focus:outline ${
                 darkMode
@@ -97,12 +69,13 @@ const Register = () => {
                 <circle cx="8.5" cy="7" r="4" />
                 <path d="M20 8v6M23 11h-6" />
               </svg>
-              <span className="ml-3">Register</span>
+              <span className="ml-3">Login</span>
             </button>
             <p className="mt-6 text-xs text-gray-600 text-center">
-              Already have an account?{" "}
-              <Link to="/login">
-                <span className="text-[#E9522C] font-semibold">Login</span>
+              Havent got an account?
+              <Link to="/register">
+            
+                <span className="text-[#E9522C] font-semibold">Register</span>
               </Link>
             </p>
           </div>
@@ -111,4 +84,4 @@ const Register = () => {
     </div>
   );
 };
-export default Register;
+export default LoginPage;
